@@ -5,15 +5,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('users', '0001_initial'),
+        ("users", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='user',
-            name='phone',
-            field=models.CharField(max_length=15, null=True, unique=True, validators=[django.core.validators.RegexValidator(message='Phone number must be in the format +998XXXXXXXXX or 998XXXXXXXXX', regex='^\\+?998\\d{9}$')]),
+            model_name="user",
+            name="phone",
+            field=models.CharField(
+                max_length=15,
+                null=True,
+                unique=True,
+                validators=[
+                    django.core.validators.RegexValidator(
+                        message="Phone number must be in the format +998XXXXXXXXX or 998XXXXXXXXX",
+                        regex="^\\+?998\\d{9}$",
+                    )
+                ],
+            ),
         ),
     ]
